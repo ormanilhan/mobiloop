@@ -1,0 +1,24 @@
+<ActionBar title="Veripark">
+  <Image src="~/app/assets/images/header.png" width="75%" class="logo"></Image>
+</ActionBar>
+<StackLayout [ngClass]="{ 'spinner-active': isBusy }">
+  <StackLayout *ngIf="isLoggedIn">
+    <Label
+      [text]="fullName"
+      textAlignment="center"
+      textDecoration="underline"
+      textWrap="true"
+      fontSize="18"
+    ></Label>
+  </StackLayout>
+  <StackLayout>
+    <ng-content></ng-content>
+  </StackLayout>
+  <ActivityIndicator
+    rowSpan="3"
+    [busy]="isBusy"
+    color="black"
+    width="100"
+    height="100"
+  ></ActivityIndicator>
+</StackLayout>

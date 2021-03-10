@@ -1,0 +1,15 @@
+.btn-save-act {
+  background-color: #10be00;
+}
+
+.btn-remove-act {
+  background-color: red;
+}
+
+.btn-add-act {
+  background-color: #0088ff;
+}
+
+.errorText {
+  color: crimson;
+}

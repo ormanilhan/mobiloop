@@ -1,0 +1,42 @@
+<app-layout>
+  <Scroll-View>
+    <StackLayout class="form">
+      <StackLayout>
+        <Label
+          text="Current Activity Date: {{ currentDay }}"
+          fontSize="18"
+        ></Label>
+      </StackLayout>
+      <ng-container *ngFor="let activity of currentActivities; let i = index">
+        <StackLayout>
+          <Label text="#{{ i + 1 }}" fontSize="15"></Label>
+          <Activity-Input [activity-info]="activity"></Activity-Input>
+          <Label text="" fontSize="15"></Label>
+        </StackLayout>
+        <Stack-Layout></Stack-Layout>
+      </ng-container>
+      <Button
+        *ngIf="currentActivities && currentActivities.length > 1"
+        text="Delete Activity"
+        fontSize="18"
+        class="btn btn-remove-act"
+        color="white"
+        (tap)="removeActivity()"
+      ></Button>
+      <Button
+        text="Add Activity"
+        fontSize="18"
+        class="btn btn-add-act"
+        color="white"
+        (tap)="addActivity()"
+      ></Button>
+      <Button
+        text="Save Activity"
+        fontSize="18"
+        class="btn btn-save-act"
+        color="white"
+        (tap)="saveActivities()"
+      ></Button>
+    </StackLayout>
+  </Scroll-View>
+</app-layout>

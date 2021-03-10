@@ -1,0 +1,65 @@
+<StackLayout>
+  <Label text="Hour Selection"></Label>
+  <DropDown
+    hint="Hour"
+    [items]="hourSelections"
+    [(ngModel)]="selectedHour"
+    (selectedIndexChanged)="selectedHourChanged($event)"
+    class="item-drop-down"
+  ></DropDown>
+</StackLayout>
+<StackLayout>
+  <Label text="Description"></Label>
+  <TextView
+    borderColor="black"
+    [text]="currentActivity.ActivityDescription"
+    (textChange)="onTextChange($event)"
+    borderWidth="1"
+    margin="5"
+    padding="5"
+    hint="Description"
+    fontSize="18"
+    autocorrect="false"
+    returnKeyType="done"
+  ></TextView>
+</StackLayout>
+<StackLayout>
+  <Label text="Activity Type"></Label>
+  <DropDown
+    hint="Activity Type"
+    [(ngModel)]="selectedActivityType"
+    [items]="activityTypeList"
+    (selectedIndexChanged)="activityTypeChanged($event)"
+    class="item-drop-down"
+  ></DropDown>
+</StackLayout>
+<StackLayout *ngIf="isProjectSelectActive">
+  <Label text="Activity Project"></Label>
+  <DropDown
+    hint="Activity Project"
+    [(ngModel)]="selectedProject"
+    [items]="projectList"
+    (selectedIndexChanged)="activityProjectChanged($event)"
+    class="item-drop-down"
+  ></DropDown>
+</StackLayout>
+<StackLayout *ngIf="isSubProjectSelectActive">
+  <Label text="Activity Sub Project"></Label>
+  <DropDown
+    hint="Activity Sub Project"
+    [(ngModel)]="selectedSubProject"
+    [items]="subProjectList"
+    (selectedIndexChanged)="activitySubProjectChanged($event)"
+    class="item-drop-down"
+  ></DropDown>
+</StackLayout>
+<StackLayout *ngIf="isCustomerSelectActive">
+  <Label text="Activity Customer"></Label>
+  <DropDown
+    hint="Activity Customer"
+    [(ngModel)]="selectedCustomer"
+    [items]="customerTypeList"
+    (selectedIndexChanged)="activityCustomerChanged($event)"
+    class="item-drop-down"
+  ></DropDown>
+</StackLayout>

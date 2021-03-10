@@ -1,0 +1,26 @@
+@import "~@nativescript/theme/css/core.css";
+@import "~@nativescript/theme/css/default.css";
+
+Button.-primary {
+  font-size: 18;
+}
+.logo {
+  margin-top: 20px;
+}
+.spinner-active {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.main-form {
+  margin-top: 10px 50px;
+}
+.page {
+  align-items: center;
+  flex-direction: column;
+}
+.form {
+  margin-left: 20;
+  margin-right: 20;
+  margin-top: 30;
+  flex-grow: 2;
+}

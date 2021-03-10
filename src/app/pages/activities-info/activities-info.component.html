@@ -1,0 +1,26 @@
+<app-layout>
+  <StackLayout *ngIf="!isBusy">
+    <StackLayout *ngIf="!hasMissingDay">
+      <Label [text]="noMissingDayMessage" textWrap="true" fontSize="16"></Label>
+    </StackLayout>
+    <StackLayout *ngIf="hasMissingDay">
+      <Label [text]="missingDaysTitle" textWrap="true" fontSize="16"></Label>
+    </StackLayout>
+    <ListView
+      [items]="missingDaysList"
+      *ngIf="hasMissingDay"
+      class="list-group"
+    >
+      <ng-template let-item="item">
+        <GridLayout>
+          <Label
+            (tap)="routeActivity(item)"
+            [text]="item"
+            fontSize="16"
+            class="list-group-item"
+          ></Label>
+        </GridLayout>
+      </ng-template>
+    </ListView>
+  </StackLayout>
+</app-layout>

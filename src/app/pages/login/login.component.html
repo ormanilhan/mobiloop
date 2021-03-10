@@ -1,0 +1,38 @@
+<app-layout>
+  <StackLayout class="form">
+    <Image src="~/app/assets/images/logo.png" width="75%" class="logo"></Image>
+    <StackLayout class="input-field">
+      <TextField
+        [(ngModel)]="userName"
+        class="input"
+        hint="E-mail address"
+        fontSize="18"
+        keyboardType="email"
+        autocorrect="false"
+        autocapitalizationType="none"
+      ></TextField>
+    </StackLayout>
+
+    <StackLayout class="input-field">
+      <TextField
+        [(ngModel)]="password"
+        class="input"
+        hint="Password"
+        secure="true"
+        fontSize="18"
+      ></TextField>
+    </StackLayout>
+    <GridLayout rows="auto">
+      <Label text="Remember me" row="0" col="0" textAlignment="right"></Label>
+      <Switch [(ngModel)]="rememberMe" row="0" col="1"></Switch>
+    </GridLayout>
+    <Button
+      text="Login"
+      fontSize="18"
+      class="btn btn-log-in"
+      color="white"
+      (tap)="btnLoginClicked()"
+      backgroundColor="#ce252a"
+    ></Button>
+  </StackLayout>
+</app-layout>
